@@ -16,7 +16,7 @@ $app_name = "vagrant-docker-web"
 $vm_ip = "192.168.3.10"
 $vm_memory = 512
 $vm_cpu = 1
-$host_entry = "127.0.0.1\tmyfirstpage.com"
+$host_entry = "127.0.0.1\thello.com"
 
 # Definitions	
 Vagrant.configure("2") do |config|
