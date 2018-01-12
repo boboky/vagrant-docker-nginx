@@ -1,0 +1,25 @@
+---
+
+- hosts: all
+  connection: local
+  become: true
+  tasks:
+
+    - name: Check Web Page is Running
+      action: uri url=http://192.168.3.10/1.html return_content=yes
+      register: webpage
+
+    - name: Check Web Page Contain "Hello World"
+      fail: msg='WebPage is Down'
+      when: "'Hello' not in webpage.content"
+
+    - name: Check Docker is Up and Runing
+      service: name=docker state=started enabled=yes
+
+    - name: Check Port 22 is Open
+      wait_for: host={{ inventory_hostname }} port=22
+      delegate_to: localhost
+
+    - name: Check Port 80 is Open
+      wait_for: host={{ inventory_hostname }} port=80
+      delegate_to: localhost

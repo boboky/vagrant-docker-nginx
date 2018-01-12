@@ -1,0 +1,6 @@
+nginx:
+  image: vagrant-docker-web
+  container_name: nginx-container
+  ports:
+    - 80:80
+
