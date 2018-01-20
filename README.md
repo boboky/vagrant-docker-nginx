@@ -16,6 +16,21 @@ Created on following environments.
 
 ## Requirements
 
+Install the following on your management server or Local Machine
+
+```
+$ sudo apt-get install virtualbox -y
+$ scurl -O https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
+$ ssudo dpkg -i vagrant_2.0.1_x86_64.deb
+$ svagrant plugin install vagrant-hostmanager
+$ sudo apt-get install software-properties-common -y
+$ sudo apt-add-repository ppa:ansible/ansible -y
+$ sudo apt-get update -y
+$ sudo apt-get install ansible -y
+```
+
+Plugins
+
 - vagrant-vbguest
 - vagrant-docker-compose
 - vagrant-hostsupdater
